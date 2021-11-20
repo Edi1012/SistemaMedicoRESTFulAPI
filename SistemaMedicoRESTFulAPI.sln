@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaMedico.Api", "SistemaMedico.Api\SistemaMedico.Api.csproj", "{09C04AD0-B258-4158-9D3A-1070A485E770}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaMedico.Core", "SistemaMedico.Core\SistemaMedico.Core.csproj", "{2F86E3DF-2BB8-4CA1-A7FB-6DF5CEACF83E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaMedico.Infrastructure", "SistemaMedico.Infrastructure\SistemaMedico.Infrastructure.csproj", "{D057EF05-15EB-441E-8528-FB76F1D4F5AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D0FCDE4D-E407-4467-802E-6635D234F519}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaMedico.UnistTest", "SistemaMedico.UnistTest\SistemaMedico.UnistTest.csproj", "{807A01BE-0006-4C57-90C8-66FAA7F79E76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaMedico.IntegrationTest", "SistemaMedico.IntegrationTest\SistemaMedico.IntegrationTest.csproj", "{72A995CF-AEF9-4D0C-A271-FBA0E4F803B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09C04AD0-B258-4158-9D3A-1070A485E770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C04AD0-B258-4158-9D3A-1070A485E770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C04AD0-B258-4158-9D3A-1070A485E770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09C04AD0-B258-4158-9D3A-1070A485E770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F86E3DF-2BB8-4CA1-A7FB-6DF5CEACF83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F86E3DF-2BB8-4CA1-A7FB-6DF5CEACF83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F86E3DF-2BB8-4CA1-A7FB-6DF5CEACF83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F86E3DF-2BB8-4CA1-A7FB-6DF5CEACF83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D057EF05-15EB-441E-8528-FB76F1D4F5AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D057EF05-15EB-441E-8528-FB76F1D4F5AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D057EF05-15EB-441E-8528-FB76F1D4F5AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D057EF05-15EB-441E-8528-FB76F1D4F5AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807A01BE-0006-4C57-90C8-66FAA7F79E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807A01BE-0006-4C57-90C8-66FAA7F79E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807A01BE-0006-4C57-90C8-66FAA7F79E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807A01BE-0006-4C57-90C8-66FAA7F79E76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A995CF-AEF9-4D0C-A271-FBA0E4F803B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A995CF-AEF9-4D0C-A271-FBA0E4F803B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A995CF-AEF9-4D0C-A271-FBA0E4F803B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A995CF-AEF9-4D0C-A271-FBA0E4F803B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{807A01BE-0006-4C57-90C8-66FAA7F79E76} = {D0FCDE4D-E407-4467-802E-6635D234F519}
+		{72A995CF-AEF9-4D0C-A271-FBA0E4F803B2} = {D0FCDE4D-E407-4467-802E-6635D234F519}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62BB58A0-BF72-419F-805D-6FF10F16B630}
+	EndGlobalSection
+EndGlobal
