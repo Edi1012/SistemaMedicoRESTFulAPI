@@ -34,7 +34,36 @@ namespace SistemaMedico.Infrastructure.Repositories
         public async Task InsertPaciente(Paciente paciente)
         {
             sistemaMedicoContext.Pacientes.Add(paciente);
-            sistemaMedicoContext.SaveChangesAsync();
+            await sistemaMedicoContext.SaveChangesAsync();
+        }
+
+        public async Task<bool> UpdatePaciente(Paciente paciente)
+        {
+            var currentPost = await  GetPaciente(paciente.Id);
+
+            sistemaMedicoContext.Pacientes.Add(paciente);
+            currentPost.Nombres = paciente.Nombres;
+            currentPost.ApellidoP = paciente.ApellidoP;
+            currentPost.ApellidoM = paciente.ApellidoM;
+
+            int rows = await sistemaMedicoContext.SaveChangesAsync();
+
+            return rows > 0;
+        }
+
+
+        public async Task<bool> DeletePaciente(Paciente paciente)
+        {
+            var currentPost = await GetPaciente(paciente.Id);
+
+            sistemaMedicoContext.Pacientes.Add(paciente);
+            currentPost.Nombres = paciente.Nombres;
+            currentPost.ApellidoP = paciente.ApellidoP;
+            currentPost.ApellidoM = paciente.ApellidoM;
+
+            int rows = await sistemaMedicoContext.SaveChangesAsync();
+
+            return rows > 0;
         }
     }
 }

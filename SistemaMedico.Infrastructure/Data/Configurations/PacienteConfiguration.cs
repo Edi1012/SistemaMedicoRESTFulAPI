@@ -18,9 +18,11 @@ namespace SistemaMedico.Infrastructure.Data.Configurations
                 
                 builder.HasKey(e =>e.Id);
                 
+
                 builder.Property(e => e.Id)
                     .ValueGeneratedNever()
-                    .HasColumnName("Id");
+                    .HasColumnName("Id")
+                    .ValueGeneratedOnAdd();
 
                 builder.Property(e => e.ApellidoM)
                     .HasMaxLength(150)

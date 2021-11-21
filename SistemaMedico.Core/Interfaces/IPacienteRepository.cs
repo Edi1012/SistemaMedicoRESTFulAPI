@@ -12,5 +12,7 @@ namespace SistemaMedico.Core.Interfaces
         Task<IEnumerable<Paciente>> GetPacientes();
         Task<Paciente> GetPaciente(int pacienteId);
         Task InsertPaciente(Paciente paciente);
+        Task<bool> UpdatePaciente(Paciente paciente);
+        Task<bool> DeletePaciente(Paciente paciente);
     }
 }

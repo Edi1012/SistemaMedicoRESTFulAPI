@@ -8,6 +8,7 @@ namespace SistemaMedico.Core.Entities
 {
     public partial class Paciente
     {
+        [Key]
         public int Id { get; set; }
         public string Nombres { get; set; }
         public string ApellidoP { get; set; }

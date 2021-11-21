@@ -19,7 +19,7 @@ namespace SistemaMedico.Infrastructure.Validators
                 .NotNull();
 
             RuleFor(pacienteDTO => pacienteDTO.ApellidoM)
-                .NotNull().Empty().WithMessage("Apellido no puede ser vacio");
+                .NotNull().NotEmpty().WithMessage("Apellido no puede ser vacio");
         }
     }
 }

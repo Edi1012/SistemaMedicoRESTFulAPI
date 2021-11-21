@@ -49,5 +49,22 @@ namespace SistemaMedico.Api.Controllers
             return Ok(paciente);
         }
 
+        [HttpPut]
+        public async Task<IActionResult> ActualizarPaciente(int Id, PacienteDTO pacienteDto)
+        {
+            var paciente = mapper.Map<Paciente>(pacienteDto);
+            await _pacienteRepository.UpdatePaciente(paciente);
+            return Ok(paciente);
+        }
+
+
+        [HttpDelete]
+        public async Task<IActionResult> DeletePaciente(int Id, PacienteDTO pacienteDto)
+        {
+            var paciente = mapper.Map<Paciente>(pacienteDto);
+            paciente.Id = Id;
+            await _pacienteRepository.DeletePaciente(paciente);
+            return Ok(paciente);
+        }
     }
 }
