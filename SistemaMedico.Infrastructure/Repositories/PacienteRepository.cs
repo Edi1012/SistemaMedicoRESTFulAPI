@@ -41,7 +41,6 @@ namespace SistemaMedico.Infrastructure.Repositories
         {
             var currentPost = await  GetPaciente(paciente.Id);
 
-            sistemaMedicoContext.Pacientes.Add(paciente);
             currentPost.Nombres = paciente.Nombres;
             currentPost.ApellidoP = paciente.ApellidoP;
             currentPost.ApellidoM = paciente.ApellidoM;
@@ -52,15 +51,11 @@ namespace SistemaMedico.Infrastructure.Repositories
         }
 
 
-        public async Task<bool> DeletePaciente(Paciente paciente)
+        public async Task<bool> DeletePaciente(int Id)
         {
-            var currentPost = await GetPaciente(paciente.Id);
+            var currentPaciente = await GetPaciente(Id);
 
-            sistemaMedicoContext.Pacientes.Add(paciente);
-            currentPost.Nombres = paciente.Nombres;
-            currentPost.ApellidoP = paciente.ApellidoP;
-            currentPost.ApellidoM = paciente.ApellidoM;
-
+            sistemaMedicoContext.Pacientes.Remove(currentPaciente);
             int rows = await sistemaMedicoContext.SaveChangesAsync();
 
             return rows > 0;

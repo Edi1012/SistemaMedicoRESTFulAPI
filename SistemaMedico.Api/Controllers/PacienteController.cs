@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SistemaMedico.Api.Response;
 using SistemaMedico.Core.DTOs;
 using SistemaMedico.Core.Entities;
 using SistemaMedico.Core.Interfaces;
@@ -30,7 +31,8 @@ namespace SistemaMedico.Api.Controllers
         {
             var pacientes = await _pacienteRepository.GetPacientes();
             var pacientesDto = mapper.Map<IEnumerable<PacienteDTO>>(pacientes);
-            return Ok(pacientesDto);
+            var response = new ApiResponse<IEnumerable<PacienteDTO>>(pacientesDto);
+            return Ok(response);
         }
 
         [HttpGet("{Id}")]
@@ -38,7 +40,8 @@ namespace SistemaMedico.Api.Controllers
         {
             var paciente = await _pacienteRepository.GetPaciente(Id);
             var pacienteDto = mapper.Map<PacienteDTO>(paciente);
-            return Ok(pacienteDto);
+            var response = new ApiResponse<PacienteDTO>(pacienteDto);
+            return Ok(response);
         }
 
         [HttpPost]
@@ -46,25 +49,28 @@ namespace SistemaMedico.Api.Controllers
         {
             var paciente = mapper.Map<Paciente>(pacienteDto);
             await _pacienteRepository.InsertPaciente(paciente);
-            return Ok(paciente);
+            var response = new ApiResponse<Paciente>(paciente);
+            return Ok(response);
         }
 
         [HttpPut]
         public async Task<IActionResult> ActualizarPaciente(int Id, PacienteDTO pacienteDto)
         {
             var paciente = mapper.Map<Paciente>(pacienteDto);
+            paciente.Id = Id;
             await _pacienteRepository.UpdatePaciente(paciente);
-            return Ok(paciente);
+            var response = new ApiResponse<Paciente>(paciente);
+            return Ok(response);
         }
 
 
         [HttpDelete]
-        public async Task<IActionResult> DeletePaciente(int Id, PacienteDTO pacienteDto)
+        public async Task<IActionResult> DeletePaciente(int Id)
         {
-            var paciente = mapper.Map<Paciente>(pacienteDto);
-            paciente.Id = Id;
-            await _pacienteRepository.DeletePaciente(paciente);
-            return Ok(paciente);
+           
+            var result = await _pacienteRepository.DeletePaciente(Id);
+            var response = new ApiResponse<bool>(result);
+            return Ok(response);
         }
     }
 }
