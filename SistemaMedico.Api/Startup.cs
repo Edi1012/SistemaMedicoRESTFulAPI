@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SistemaMedico.Core.Interfaces;
+using SistemaMedico.Core.Services;
 using SistemaMedico.Infrastructure.Data;
 using SistemaMedico.Infrastructure.Filters;
 using SistemaMedico.Infrastructure.Repositories;
@@ -51,7 +52,13 @@ namespace SistemaMedico.Api
             }).AddFluentValidation(option=> {
                 option.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
             });
+            
+            
+            
+            services.AddTransient<IPacienteService, PacienteService>();
             services.AddTransient<IPacienteRepository, PacienteRepository>();
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SistemaMedico.Api", Version = "v1" });

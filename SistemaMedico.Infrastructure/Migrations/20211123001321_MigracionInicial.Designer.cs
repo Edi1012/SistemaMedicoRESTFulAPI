@@ -9,7 +9,7 @@ using SistemaMedico.Infrastructure.Data;
 namespace SistemaMedico.Infrastructure.Migrations
 {
     [DbContext(typeof(SistemaMedicoContext))]
-    [Migration("20211120220843_MigracionInicial")]
+    [Migration("20211123001321_MigracionInicial")]
     partial class MigracionInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
