@@ -52,12 +52,13 @@ namespace SistemaMedico.Api
             }).AddFluentValidation(option=> {
                 option.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
             });
-            
-            
-            
-            services.AddTransient<IPacienteService, PacienteService>();
-            services.AddTransient<IPacienteRepository, PacienteRepository>();
 
+
+
+            services.AddTransient<IPacienteService, PacienteService>();
+            //services.AddTransient<IPacienteRepository, PacienteRepository>();
+
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
 
             services.AddSwaggerGen(c =>
             {

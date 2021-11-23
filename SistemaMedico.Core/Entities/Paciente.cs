@@ -6,10 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SistemaMedico.Core.Entities
 {
-    public partial class Paciente
+    public partial class Paciente : BaseEntity
     {
         [Key]
-        public int Id { get; set; }
         public string Nombres { get; set; }
         public string ApellidoP { get; set; }
         public string ApellidoM { get; set; }

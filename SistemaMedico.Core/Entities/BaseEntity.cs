@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SistemaMedico.Core.Entities
 {
-    class Class1
+    public abstract class BaseEntity
     {
+        public int Id { get; set; }
     }
 }

@@ -67,7 +67,6 @@ namespace SistemaMedico.Api.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeletePaciente(int Id)
         {
-           
             var result = await _pacienteService.DeletePaciente(Id);
             var response = new ApiResponse<bool>(result);
             return Ok(response);

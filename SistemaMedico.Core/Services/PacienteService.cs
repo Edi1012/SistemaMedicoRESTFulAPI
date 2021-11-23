@@ -14,36 +14,40 @@ namespace SistemaMedico.Core.Services
     /// </summary>
     public class PacienteService : IPacienteService
     {
-        private readonly IPacienteRepository pacienteRepository;
+        private readonly IRepository<Paciente> pacienteRepository;
 
-        public PacienteService(IPacienteRepository pacienteRepository)
+        public PacienteService(IRepository<Paciente> pacienteRepository)
         {
             this.pacienteRepository = pacienteRepository;
         }
 
-        public async Task<bool> DeletePaciente(int Id)
-        {
-            return await pacienteRepository.DeletePaciente(Id);
-        }
-
-        public async Task<Paciente> GetPaciente(int pacienteId)
-        {
-            return await pacienteRepository.GetPaciente(pacienteId);
-        }
 
         public async Task<IEnumerable<Paciente>> GetPacientes()
         {
-            return await pacienteRepository.GetPacientes();
+            return await pacienteRepository.GetAll();
         }
 
+
+        public async Task<Paciente> GetPaciente(int pacienteId)
+        {
+            return await pacienteRepository.GetById(pacienteId);
+        }
         public async Task InsertPaciente(Paciente paciente)
         {
-            await pacienteRepository.InsertPaciente(paciente);
+            await pacienteRepository.Add(paciente);
         }
-
         public async Task<bool> UpdatePaciente(Paciente paciente)
         {
-            return await pacienteRepository.UpdatePaciente(paciente);
+            await pacienteRepository.Update(paciente);
+            return true;
         }
+        public async Task<bool> DeletePaciente(int Id)
+        {
+            await pacienteRepository.Delete(Id);
+            return true;
+        }
+
+
+     
     }
 }
