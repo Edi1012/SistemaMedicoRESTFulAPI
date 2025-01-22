@@ -1,6 +1,3 @@
-Aquí tienes un ejemplo de un archivo `README.md` que explica cómo crear una migración y aplicar el `update` a la base de datos usando **Entity Framework Core**:
-
-```markdown
 # Entity Framework Core - Migraciones y Actualización de la Base de Datos
 
 Este documento explica los pasos necesarios para crear una migración con **Entity Framework Core** y aplicarla a la base de datos.
