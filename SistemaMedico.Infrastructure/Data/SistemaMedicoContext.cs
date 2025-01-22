@@ -19,7 +19,7 @@ namespace SistemaMedico.Infrastructure.Data
         {
         }
 
-        public virtual DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Paciente> Pacientes { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
