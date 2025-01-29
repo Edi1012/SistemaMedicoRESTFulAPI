@@ -15,6 +15,8 @@ namespace SistemaMedico.Infrastructure.Mapping
         {
             CreateMap<Paciente, PacienteDTO>();
             CreateMap<PacienteDTO, Paciente>();
+            CreateMap<DoctorDTO, Doctor>();
+            CreateMap<Doctor, DoctorDTO>();
         }
     }
 }

@@ -52,6 +52,7 @@ namespace SistemaMedico.Api
 
 
             services.AddTransient<IPacienteService, PacienteService>();
+            services.AddTransient<IDoctorService, DoctorService>();
             //services.AddTransient<IPacienteRepository, PacienteRepository>();
 
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemaMedico.Infrastructure.Data;
 
@@ -10,9 +11,11 @@ using SistemaMedico.Infrastructure.Data;
 namespace SistemaMedico.Infrastructure.Migrations
 {
     [DbContext(typeof(SistemaMedicoContext))]
-    partial class SistemaMedicoContextModelSnapshot : ModelSnapshot
+    [Migration("20250129213102_AddDoctorRelationships")]
+    partial class AddDoctorRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

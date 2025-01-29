@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SistemaMedico.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaMedico.Infrastructure.Data.Configurations
 {
@@ -35,6 +30,10 @@ namespace SistemaMedico.Infrastructure.Data.Configurations
                 builder.Property(e => e.Nombres)
                     .HasMaxLength(150)
                     .IsUnicode(false);
+
+                builder.HasMany(p => p.DoctorPacientes)
+                    .WithOne(dp => dp.Paciente)
+                    .HasForeignKey(dp => dp.PacienteId);
         }
     }
 }

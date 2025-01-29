@@ -25,6 +25,8 @@ namespace SistemaMedico.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PacienteConfiguration());
+            modelBuilder.ApplyConfiguration(new DoctorConfiguration());
+            modelBuilder.ApplyConfiguration(new DoctorPacienteConfiguration());
 
             OnModelCreatingPartial(modelBuilder);
         }
