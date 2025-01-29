@@ -1,14 +1,10 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaMedico.Api.Response;
 using SistemaMedico.Core.DTOs;
 using SistemaMedico.Core.Entities;
 using SistemaMedico.Core.Interfaces;
-using SistemaMedico.Infrastructure.Repositories;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SistemaMedico.Api.Controllers

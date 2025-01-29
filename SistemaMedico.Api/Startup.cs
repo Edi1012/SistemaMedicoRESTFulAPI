@@ -1,23 +1,18 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SistemaMedico.Core.Interfaces;
 using SistemaMedico.Core.Services;
 using SistemaMedico.Infrastructure.Data;
 using SistemaMedico.Infrastructure.Filters;
 using SistemaMedico.Infrastructure.Repositories;
+using SistemaMedico.Infrastructure.Validators;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SistemaMedico.Api
 {
@@ -37,7 +32,7 @@ namespace SistemaMedico.Api
 
             services.AddControllers().AddNewtonsoftJson(options => {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-            });
+            }).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PacienteDtoValidator>());
 
             //Añadimos autommaper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

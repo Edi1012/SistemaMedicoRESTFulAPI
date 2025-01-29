@@ -13,13 +13,13 @@ namespace SistemaMedico.Infrastructure.Validators
         public PacienteDtoValidator() 
         {
             RuleFor(pacienteDTO => pacienteDTO.Nombres)
-                .NotNull();
+                .NotNull().NotEmpty();
 
             RuleFor(pacienteDTO => pacienteDTO.ApellidoP)
-                .NotNull();
+                .NotNull().NotEmpty();
 
             RuleFor(pacienteDTO => pacienteDTO.ApellidoM)
-                .NotNull().NotEmpty().WithMessage("Apellido no puede ser vacio");
+                .NotNull().NotEmpty();
         }
     }
 }
